@@ -1,0 +1,49 @@
+{% extends 'partials/_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+  </div>
+
+  <div class="main_content">
+    <div class="main_content_bg">
+      <img src="{% static 'images/content-bg.jpg'%}" alt="">
+    </div>
+
+    <!-- about section -->
+
+    <section class="about_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="{% static 'images/about-img.jpg'%}" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <div class="heading_container">
+                <h2>
+                  About Us
+                </h2>
+              </div>
+              <p>
+                Minima cupiditate fuga animi unde nesciunt esse, voluptas vitae culpa ut impedit quae, totam eum in quis non velit! Aliquid libero voluptas quisquam magnam porro hic atque at numquam vel.
+                Veritatis, magni deleniti optio quod quo nisi repellat quasi quia.
+              </p>
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end about section -->
+
+  </div>
+
+ {% endblock %}
