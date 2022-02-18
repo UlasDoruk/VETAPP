@@ -1,11 +1,16 @@
+from re import search
 from django.contrib import admin
 from . models import Anımals
 
-admin.site.register(Anımals)
+@admin.register(Anımals)
+
+class AnımalsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'available')
+    list_filter = ('available',)
+    search_fields = ('name',)
 
 
 
-# Register your models here.
-""" admin username : ulasdk
-    password : 7272
- """
+
+# admin username : ulasdk
+# password : 7272
