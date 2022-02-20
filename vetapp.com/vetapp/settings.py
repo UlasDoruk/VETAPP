@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Pages app occured
     'pages.apps.PagesConfig',
+    # Anımals app occured
     'anımals.apps.AnımalsConfig',
+    # Owners app occured
+    'owners.apps.OwnersConfig',
 ]
 
 MIDDLEWARE = [

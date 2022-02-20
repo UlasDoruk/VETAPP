@@ -1,3 +1,9 @@
+<!-- _base.html is a main html document -->
+
+<!-- This _base.html document has similar header, navigation bar, footer sections -->
+
+<!-- For loading static files -->
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -50,7 +56,6 @@
                 <button class="btn   my-sm-0 nav_search-btn" type="submit"> <i class="fa fa-search" aria-hidden="true"></i> </button>
               </form>
             </div>
-
             <div class="custom_menu-btn">
               <button onclick="openNav()">
                 <span class="s-1"> </span>
@@ -62,7 +67,7 @@
               <div class="overlay-content">
                 <a href="{% url 'index' %}">Home</a>
                 <a href="{% url 'anımals' %}">Animals</a>
-                {% comment %} <a href="{% url 'owners' %}">Owners</a> {% endcomment %}
+                <a href="{% url 'owners' %}">Owners</a>
               </div>
             </div>
           </div>

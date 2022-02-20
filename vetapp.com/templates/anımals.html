@@ -1,6 +1,12 @@
+<!-- Using Template Engine for header,navigation bar and footer sections -->
+
 {% extends 'partials/_base.html' %}
 
+<!-- Loading static files from Temple_doc -->
+
 {% load static %}
+
+<!-- anımals.html individual contents begins here -->
 
 {% block content %}
 
@@ -17,26 +23,33 @@
           <h2> Animal List </h2>
         </div>
         <div class="row">
+          <!-- This loop provides getting anımals objects from anımal_list which in animal/views.py -->
           {% for anımal in anımals %}
           <div class="col-md-4">
             <div class="box " style="background-color:tomato">
               <div class="img-box ">
+                <!-- Adding img from Django admin side -->
                 {% comment %} <img src="{{anımal.image.url}}" alt=""> {% endcomment %}
               </div>
               <div class="detail-box">
                 <h5>
+                  <!-- Gettin name  property  -->
                   {{anımal.name}}
                 </h5>
                 <p>
+                  <!-- Gettin type  property  -->
                    Type :  {{anımal.type}}
                 </p>
                 <p>
+                  <!-- Gettin species  property  -->
                   Species :  {{anımal.species}}
                 </p>
                 <p>
+                  <!-- Gettin age  property  -->
                   Age :  {{anımal.age}}
                 </p>
-                  Description :  {{anımal.description | truncatechars:100 }}
+                <!-- Gettin description  property | truncatechars  provides shwoing 100 characters to client -->
+                   {{anımal.description | truncatechars:100 }}
                 </p>
               </div>
             </div>
@@ -52,3 +65,5 @@
   </div>
 
   {% endblock %}
+
+  <!-- anımals.html individual contents ends here -->
