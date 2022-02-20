@@ -19,16 +19,24 @@
         <div class="row">
           {% for anımal in anımals %}
           <div class="col-md-4">
-            <div class="box ">
-              <div class="img-box">
-                <img src="{{anımal.image.url}}" alt="">
+            <div class="box " style="background-color:tomato">
+              <div class="img-box ">
+                {% comment %} <img src="{{anımal.image.url}}" alt=""> {% endcomment %}
               </div>
               <div class="detail-box">
                 <h5>
                   {{anımal.name}}
                 </h5>
                 <p>
-                  {{anımal.description | truncatechars:100 }}
+                   Type :  {{anımal.type}}
+                </p>
+                <p>
+                  Species :  {{anımal.species}}
+                </p>
+                <p>
+                  Age :  {{anımal.age}}
+                </p>
+                  Description :  {{anımal.description | truncatechars:100 }}
                 </p>
               </div>
             </div>
