@@ -27,10 +27,6 @@
           {% for anımal in anımals %}
           <div class="col-md-4">
             <div class="box " style="background-color:tomato">
-              <div class="img-box ">
-                <!-- Adding img from Django admin side -->
-                {% comment %} <img src="{{anımal.image.url}}" alt=""> {% endcomment %}
-              </div>
               <div class="detail-box">
                 <h2>
                   <!-- Gettin name  property, leading to anımals/views.py and taking id information  -->

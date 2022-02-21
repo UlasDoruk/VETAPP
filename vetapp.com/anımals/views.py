@@ -1,4 +1,5 @@
 #  ----------- Class based import section ------------- #
+from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from anımals.models import Anımals
@@ -23,3 +24,11 @@ class AnımalsDetailView(DetailView):
         context['anımals'] = Anımals.objects.filter(available=True, id=self.kwargs["pk"])
         return context
 
+def search(request):
+    anımals = Anımals.objects.filter(name__contains = request.GET['search'])
+
+    context={
+        'anımals' : anımals
+    }
+    
+    return render(request,'anımals.html',context)

@@ -1,4 +1,5 @@
 #  ----------- Class based import section ------------- #
+from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from owners.models import Owners
@@ -24,3 +25,13 @@ class OwnersDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['anımals'] = Anımals.objects.filter(available=True, owner=self.kwargs["pk"])
         return context
+
+
+def search(request):
+    owners = Owners.objects.filter(name__contains = request.GET['search'])
+
+    context={
+        'owners' : owners
+    }
+    
+    return render(request,'owners.html',context)

@@ -20,8 +20,8 @@ class Owners(models.Model):
 
 # __str__ method  returns Owners Class
 
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
 
 
 #ad soyad, iletişim bilgileri, telefon, e-posta

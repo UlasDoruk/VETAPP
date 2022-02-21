@@ -22,8 +22,8 @@ class Anımals(models.Model):
     available=models.BooleanField(default=True)
     
 # Returning Anımals Class
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
 
 
 # tür, cins, isim, yaş, açıklama 
