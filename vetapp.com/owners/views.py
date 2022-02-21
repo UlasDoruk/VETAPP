@@ -1,17 +1,26 @@
-from multiprocessing import context
-from django.shortcuts import render
-from django.shortcuts import render
-# I imported Owners model
-from . models import Owners
+#  ----------- Class based import section ------------- #
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from owners.models import Owners
+from anımals.models import Anımals
 
-# owner_list will return Owners model's all objects 
 
-def owner_list(request):
-    # ('-date') provides showing up last added object 
-    owners = Owners.objects.all().order_by('-date')
-    # I created library structure for key, value pairs
-    context = {
-        'owners': owners
-    }
+class OwnersListView(ListView):
+    model = Owners
+    template_name = "owners.html"
+    context_object_name = "owners"
 
-    return render(request, "owners.html", context)
+
+class OwnersDetailView(DetailView):
+    # Getting the Owners model from owners/models
+    model = Owners
+    # Leading the OwnersDetailView class to owner.html
+    template_name = "owner.html"
+    # We are using "owner" key instead of "object" in owner.html document
+    context_object_name = "owner"
+    # Taking Anımals objects and adding to owner itself
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['anımals'] = Anımals.objects.filter(available=True, owner=self.kwargs["pk"])
+        return context

@@ -1,10 +1,10 @@
 from django.urls import path
-# I imported vetapp/views.py
+# Imported vetapp/views.py
 from . import views
-
-# When vetapp/urls.py call the anımals/urls.py, urlpatterns list showed the path of anımal_list function
+from anımals.views import AnımalsListView, AnımalsDetailView 
 
 urlpatterns = [
-    path('', views.anımal_list, name="anımals"),
-    
+    path("", AnımalsListView.as_view(), name="anımals"),
+    # Assigned primary key to all anımals
+    path('anımals/<int:pk>', AnımalsDetailView.as_view(), name="anımals_detail")
 ]

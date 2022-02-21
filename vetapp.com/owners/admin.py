@@ -14,6 +14,6 @@ class OwnersAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-# admin username : ulasdk
+# admin username : udk97@hotmail.com
 # password : 7272
 

@@ -12,5 +12,5 @@ class AnımalsAdmin(admin.ModelAdmin):
 
 
 
-# admin username : ulasdk
+# admin username : udk97@hotmail.com
 # password : 7272

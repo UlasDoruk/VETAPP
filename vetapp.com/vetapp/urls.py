@@ -18,6 +18,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+# Main urlpatterns list of app
+# urlpatterns diverting the app first write string
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("pages.urls")),

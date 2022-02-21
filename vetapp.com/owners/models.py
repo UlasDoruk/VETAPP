@@ -1,12 +1,9 @@
 from asyncio.windows_events import NULL
-import email
 from django.db import models
 from distutils.command.upload import upload
 from email.mime import image
 from email.policy import default
 from pickle import TRUE
-from unicodedata import name
-from zoneinfo import available_timezones
 from django.db import models
 
 
@@ -27,4 +24,4 @@ def __str__(self):
     return self.name
 
 
-#ad soyad, iletişim bilgileri, telefon,e-posta
+#ad soyad, iletişim bilgileri, telefon, e-posta

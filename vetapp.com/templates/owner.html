@@ -6,7 +6,7 @@
 
 {% load static %}
 
-<!-- anımals.html individual contents begins here -->
+ <!-- Special contents of teacher.html begins here -->
 
 {% block content %}
 
@@ -17,25 +17,52 @@
 
     <!-- service section -->
 
-    <section class="service_section layout_padding">
-      <div class="container py_mobile_45">
-        <div class="heading_container heading_center">
-          <h2> Animal List </h2>
+<section class="service_section layout_padding">
+  <div class="container py_mobile_45">
+    <div class="heading_container heading_center">
+      <!-- Gettin properties from owners/views.py -->
+      <h2> {{owner.name}} {{owner.surname}} </h2>
+    </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box " style="background-color:tomato">
+        <div class="detail-box">
+          <!-- Gettin name and surname properties -->
+          <h2>
+            {{owner.name}}
+          </h2>
+            <h3>
+            {{owner.surname}}
+            </h3>
+          <p>
+          <!-- Gettin contact property  -->
+            Contact :  {{owner.contact}}
+          </p>
+          <p>
+          <!-- Gettin phone_number property  -->
+            Phone Number :  {{owner.phone_number}}
+          </p>
+          <p>
+          <!-- Gettin email propertiy  -->
+            Email :  {{owner.email}}
         </div>
+      </div>
+    <!-- Owner's Animals -->
+    </div>
         <div class="row">
           <!-- This loop provides getting anımals objects from anımal_list which in animal/views.py -->
           {% for anımal in anımals %}
           <div class="col-md-4">
-            <div class="box " style="background-color:tomato">
+            <div class="box " style="background-color:grey">
               <div class="img-box ">
                 <!-- Adding img from Django admin side -->
                 {% comment %} <img src="{{anımal.image.url}}" alt=""> {% endcomment %}
               </div>
               <div class="detail-box">
-                <h2>
-                  <!-- Gettin name  property, leading to anımals/views.py and taking id information  -->
-                 <a href="{% url 'anımals_detail' anımal.pk %}"> {{anımal.name}}</a>
-                </h2>
+                <h5>
+                  <!-- Gettin name  property  -->
+                  <a href="{% url 'anımals_detail' anımal.pk %}"> {{anımal.name}}</a>
+                </h5>
                 <p>
                   <!-- Gettin type  property  -->
                    Type :  {{anımal.type}}
@@ -56,14 +83,16 @@
           </div>
           {% endfor %}
           </div> 
-        </div>
-      </div>
-    </section>
-
+        </div> 
+      </div> 
+    </div>
+    <!-- Owner's Animals -->
+  </div>
+</section>
     <!-- end service section -->
 
   </div>
 
   {% endblock %}
 
-  <!-- anımals.html individual contents ends here -->
+  <!-- Special contents of teacher.html  ends here -->
