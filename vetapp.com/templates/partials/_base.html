@@ -68,6 +68,17 @@
                 <a href="{% url 'index' %}">Home</a>
                 <a href="{% url 'anımals' %}">Animals</a>
                 <a href="{% url 'owners' %}">Owners</a>
+                {% if user.is_authenticated %}
+                    <a class="hover-btn-new log orange mr-2"  href="{% url 'dashboard' %}" ><span>{{user.username}}</span></a>
+                    <a class="hover-btn-new log orange" href="javascript:{document.getElementById('logout').submit()}"><span><i class="fa fa-sign-out"></i></span></a>
+                        <form action="{% url 'logout' %}" method="POST" id="logout">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+               {% endif %}
               </div>
             </div>
           </div>
@@ -91,7 +102,6 @@
 
 <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.js' %}"></script>
-<!-- End Google Map -->
 <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}">
 </script>
 <script src="{% static 'js/custom.js' %}"></script>

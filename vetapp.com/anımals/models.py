@@ -7,11 +7,13 @@ from unicodedata import name
 from zoneinfo import available_timezones
 from django.db import models
 from owners.models import Owners
+from django.contrib.auth.models import User
 
 class Anımals(models.Model): 
     # owner field bounded to Anımals model. I choosed CASCADE method to on_delete field. Beacuse if we delete the owner, then we delete to animal which is owner's have
     owner = models.ForeignKey(Owners,null=True,on_delete=models.CASCADE)
     name= models.CharField(max_length=30, unique=True)
+    owners = models.ManyToManyField(User, blank=True, related_name='Animal_added')
     type = models.CharField(max_length=30, unique=False,null=True)
     species = models.CharField(max_length=30, unique=False,null=True)
     age = models.IntegerField( unique=False,null=True)
