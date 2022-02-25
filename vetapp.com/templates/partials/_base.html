@@ -69,6 +69,7 @@
                 <a href="{% url 'anımals' %}">Animals</a>
                 <a href="{% url 'owners' %}">Owners</a>
                 {% if user.is_authenticated %}
+                <!-- If user is valid _base.html shows dashboard link and logout icon -->
                     <a class="hover-btn-new log orange mr-2"  href="{% url 'dashboard' %}" ><span>{{user.username}}</span></a>
                     <a class="hover-btn-new log orange" href="javascript:{document.getElementById('logout').submit()}"><span><i class="fa fa-sign-out"></i></span></a>
                         <form action="{% url 'logout' %}" method="POST" id="logout">

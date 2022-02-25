@@ -17,7 +17,7 @@
 
     <!-- service section -->
 
-    <section class="service_section layout_padding">
+      <section class="service_section layout_padding">
       <div class="container py_mobile_45">
         <div class="heading_container heading_center">
           <h2> Animal List </h2>
@@ -32,6 +32,20 @@
                   <!-- Gettin name  property, leading to anımals/views.py and taking id information  -->
                  <a href="{% url 'anımals_detail' anımal.pk %}"> {{anımal.name}}</a>
                 </h2>
+                <!-- This section provides enrolling the animals to user -->
+               {% comment %}  {% if user.is_authenticated %}
+								  {% if anımal in enroll_the_anımal %}
+								<button type="submit" class="btn btn-outline-danger rounded-0" data-toggle="modal"
+									data-target="#releaseModal">
+									<span>RELEASE</span>
+								</button>
+								{% else %}
+								<button type="submit" class="btn btn-outline-success rounded-0" data-toggle="modal"
+									data-target="#enrollModal">
+									<span>ENROLL</span>
+								</button>
+								{% endif %}
+							{% endif %} {% endcomment %}
                 <p>
                   <!-- Gettin type  property  -->
                    Type :  {{anımal.type}}
@@ -59,6 +73,68 @@
     <!-- end service section -->
 
   </div>
+
+{% comment %}         <!-- ENROLL Modal -->
+          <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="enrollModalLabel">Adopt The Animal</h2>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                  </button>
+                </div>
+					
+                <div class="modal-body">
+                  <p>You will adopting the anımal below:</p>
+                  <h1>{{anımal.name}}</h1>
+                </div>
+ 
+                <div class="modal-footer">
+                  <form action="{% url 'enroll_the_anımal' %}" method="POST">
+                      {% csrf_token %}
+                    <input type="hidden" name="user_id" value="{{user.id}}">
+                    <input type="hidden" name="anımal_id" value="{{anımal.id}}">
+                    <input type="submit" value="I AM SURE" class="btn btn-success">
+                  </form>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    CANCEL
+                  </button>
+                  <!-- RELEASEModal -->
+                  <div class="modal fade" id="releaseModal" tabindex="-1" role="dialog" aria-labelledby="releaseModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="releaseModalLabel">Adopt The Animal</h2>
+                          <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>You will release the animal below:</p>
+                          <h1>{{anımal.name}}</h1>
+                        </div>
+                        <div class="modal-footer">
+                          <form action="{% url 'release_the_anımal' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="user_id" value="{{user.id}}">
+                            <input type="hidden" name="anımal_id" value="{{anımal.id}}">
+                            <input type="submit" value="I AM SURE" class="btn btn-danger">
+                          </form>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            CANCEL
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+						
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
 
   {% endblock %}
 

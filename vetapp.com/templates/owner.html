@@ -20,14 +20,14 @@
 <section class="service_section layout_padding">
   <div class="container py_mobile_45">
     <div class="heading_container heading_center">
-      <!-- Gettin properties from owners/views.py -->
+      <!-- Getting properties from owners/views.py -->
       <h2> {{owner.name}} {{owner.surname}} </h2>
     </div>
   <div class="row">
     <div class="col-md-12">
       <div class="box " style="background-color:tomato">
         <div class="detail-box">
-          <!-- Gettin name and surname properties -->
+          <!-- Getting name and surname properties -->
           <h2>
             {{owner.name}}
           </h2>
@@ -35,11 +35,11 @@
             {{owner.surname}}
             </h3>
           <p>
-          <!-- Gettin contact property  -->
+          <!-- Getting contact property  -->
             Contact :  {{owner.contact}}
           </p>
           <p>
-          <!-- Gettin phone_number property  -->
+          <!-- Getting phone_number property  -->
             Phone Number :  {{owner.phone_number}}
           </p>
           <p>
@@ -56,22 +56,22 @@
             <div class="box " style="background-color:grey">
               <div class="detail-box">
                 <h5>
-                  <!-- Gettin name  property  -->
+                  <!-- Getting name  property  -->
                   <a href="{% url 'anımals_detail' anımal.pk %}"> {{anımal.name}}</a>
                 </h5>
                 <p>
-                  <!-- Gettin type  property  -->
+                  <!-- Getting type  property  -->
                    Type :  {{anımal.type}}
                 </p>
                 <p>
-                  <!-- Gettin species  property  -->
+                  <!-- Getting species  property  -->
                   Species :  {{anımal.species}}
                 </p>
                 <p>
-                  <!-- Gettin age  property  -->
+                  <!-- Getting age  property  -->
                   Age :  {{anımal.age}}
                 </p>
-                <!-- Gettin description  property | truncatechars  provides shwoing 100 characters to user -->
+                <!-- Getting description  property | truncatechars  provides shwoing 100 characters to user -->
                    {{anımal.description | truncatechars:100 }}
                 </p>
               </div>

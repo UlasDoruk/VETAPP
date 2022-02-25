@@ -1,4 +1,6 @@
 from dataclasses import fields
+from pickle import TRUE
+from statistics import mode
 from django import forms
 from django.contrib.auth.forms import  UserCreationForm
 from django.contrib.auth.models import User
@@ -45,7 +47,6 @@ class RegisterForm(UserCreationForm):
         'placeholder': 'Re-Type Password'
     }))
     
-class Meta:
+class Meta():
     model = User
-    User.is_staff = True
-    fields = ['first_name','last_name','user_name','password','phone_number']
+    fields = ['first_name','last_name','user_name','password1','password2']
