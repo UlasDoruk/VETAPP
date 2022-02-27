@@ -8,3 +8,9 @@ e-posta )
 * Var olan bir kayıt üzerinde değişiklik yapılabilmeli
 * Var olan kayıtlar incelebilmeli
 * Var olan bir kayıt silinebilmeli -->
+
+- VETAPP uygulamasını reponun yanındaki dowland zip ile indirin 
+- VSC, MVS, Github app gibi uygulamalardan dosyayı açın 
+- Terminale "python magane.py runserver" yazarak uygulamayı çalıştırabilirsiniz. 
+
+<h1 VSC için </h1>
