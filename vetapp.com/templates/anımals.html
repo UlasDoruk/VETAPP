@@ -33,7 +33,7 @@
                  <a href="{% url 'anımals_detail' anımal.pk %}"> {{anımal.name}}</a>
                 </h2>
                 <!-- This section provides enrolling the animals to user -->
-               {% comment %}  {% if user.is_authenticated %}
+                 {% if user.is_authenticated %}
 								  {% if anımal in enroll_the_anımal %}
 								<button type="submit" class="btn btn-outline-danger rounded-0" data-toggle="modal"
 									data-target="#releaseModal">
@@ -45,7 +45,7 @@
 									<span>ENROLL</span>
 								</button>
 								{% endif %}
-							{% endif %} {% endcomment %}
+							{% endif %} 
                 <p>
                   <!-- Gettin type  property  -->
                    Type :  {{anımal.type}}
@@ -74,7 +74,7 @@
 
   </div>
 
-{% comment %}         <!-- ENROLL Modal -->
+         <!-- ENROLL Modal -->
           <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -134,7 +134,7 @@
                 </div>
               </div>
             </div>
-          </div> {% endcomment %}
+          </div>
 
   {% endblock %}
 
