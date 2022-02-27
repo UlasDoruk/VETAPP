@@ -13,4 +13,4 @@ e-posta )
 - VSC, MVS, Github app gibi uygulamalardan dosyayı açın 
 - Terminale "python magane.py runserver" yazarak uygulamayı çalıştırabilirsiniz. 
 
-<h1 VSC için <h1>
+* VSC için *
