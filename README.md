@@ -45,3 +45,4 @@
 2. ![image](https://user-images.githubusercontent.com/82175798/155892754-85d9b1cc-4e0f-474b-ad07-c836e9ccfab2.png)
 
 ### Note 2 : Profilinizden hayvan silme işlemi veya Hayvan, Owners bilgileri değiştirme işlemini sayfa üzerinden yapamadım. Django Admin sayfası üzerinden yapabildim. (admin username : UlaşDK password : 7272)
+
